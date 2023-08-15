@@ -10,10 +10,10 @@
 - 👨🏻‍💻 [기능 구현](#-기능-구현)
   - [CAN,CAN-FD Communication](#1-CAN,CAN-FD_Communication)
   - [RF Communication](#2-RF-Communication)
-  - Lane Keeping Assist
-  - Forward Collision Warning
-  - Blind-Spot Collision-Avoidance Assist
-  - Auto headlight
+  - [Lane Keeping Assist](#2-Lane-Keeping-Assist)
+  - [Forward Collision Warning](#2-Forward-Collision-Warning)
+  - [Blind-Spot Collision-Avoidance Assist](#2-Blind-Spot-Collision-Avoidance-Assist)
+  - [Auto headlight](#2-Auto-headlight)
 - 🚀 [배포](#-배포)
 - ⏰ [커밋 히스토리](#-커밋-히스토리)
 
@@ -44,11 +44,16 @@
 <br />
 
 ## **✨ 작품 소개**
-> **프로젝트:** Smart Communication in ADAS-Equipped Electric Vehicle with CAN-FD, CAN and RF
+> **작품 이름:** Smart Communication in ADAS-Equipped Electric Vehicle with CAN-FD, CAN and RF
 >
-> **기능:**  Lane Keeping Assist, Forward Collision Warning, Blind-Spot Collision-Avoidance Assist, Auto headlight, Radio control
+> **작품 목표:** CAN-FD, CAN, RF 통신을 사용하여 ADAS가 탑재된 유무선 전동자동차 제작
+>
+> **작품 선정 동기:** 팀원 전원이 자동차에 관심이 많아 제작하게 됨 ---수정---
+> 
+> **목표 기능:**  Lane Keeping Assist, Forward Collision Warning, Blind-Spot Collision-Avoidance Assist, Auto headlight, Radio control
 >
 > **구상도:**
+> <img width="100%" src=https://github.com/qkcvb110/Portfolio/assets/121782690/39f393b4-c283-44d2-8740-e597be9d826e/>
 
 <br />
 
