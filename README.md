@@ -52,7 +52,7 @@
 > 
 > **목표 기능:**  Lane Keeping Assist, Forward Collision Warning, Blind-Spot Collision-Avoidance Assist, Auto headlight, Radio control
 >
-> **구상도:**
+> **구상도**
 > <img width="100%" src=https://github.com/qkcvb110/Portfolio/assets/121782690/39f393b4-c283-44d2-8740-e597be9d826e/>
 
 <br />
@@ -68,3 +68,10 @@
 
 - 전동자동차를 원격으로 조종하기 위한 통신으로 RF 통신을 사용
 
+### **3. Lane Keeping Assist**
+
+### **4. Forward Collision Warning**
+
+### **5. Blind-Spot Collision-Avoidance Assist**
+
+### **6. Auto headlight**
