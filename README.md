@@ -6,9 +6,10 @@
 
 - 📝 [개요](#-포트폴리오-개요)
 - 🛠 [기술 및 도구](#-기술-및-도구)
+- ✨ [작품 소개](#-작품-소개)
 - 👨🏻‍💻 [기능 구현](#-기능-구현)
   - [CAN,CAN-FD Communication](#1-CAN,CAN-FD_Communication)
-  - RF Communication
+  - [RF Communication](#2-RF-Communication)
   - Lane Recognition
   - LIDAR Sensor
   - Ultrasonic Sensor
@@ -42,7 +43,7 @@
 
 <br />
 
-## **✨ 업데이트**
+## **✨ 작품 소개**
 
 <br />
 
@@ -50,6 +51,10 @@
 
 ### **1. CAN,CAN-FD Communication**
 
-- 라이트 및 다크모드 기능 구현
-- 사용자의 시스템 모드에 맞게 theme이 설정되도록 구현
-- 사용자가 설정한 테마가 localStorage에 저장되어 한번 설정한 이후 같은 theme을 보여주도록 구현
+- 프로젝트에 사용된 주 통신으로 CAN(Controller Area Network)통신을 사용
+- STM 간은 CAN-FD, Raspberry Pi와 STM 간의 통신은 CAN을 사용하여 통신
+
+### **2. RF Communication**
+
+- 전동자동차를 원격으로 조종하기 위한 통신으로 RF 통신을 사용
+
