@@ -10,10 +10,10 @@
 - 👨🏻‍💻 [기능 구현](#-기능-구현)
   - [CAN,CAN-FD Communication](#1-CAN,CAN-FD_Communication)
   - [RF Communication](#2-RF-Communication)
-  - Lane Recognition
-  - LIDAR Sensor
-  - Ultrasonic Sensor
-  - Light sensor
+  - Lane Keeping Assist
+  - Forward Collision Warning
+  - Blind-Spot Collision-Avoidance Assist
+  - Auto headlight
 - 🚀 [배포](#-배포)
 - ⏰ [커밋 히스토리](#-커밋-히스토리)
 
@@ -44,6 +44,11 @@
 <br />
 
 ## **✨ 작품 소개**
+> **프로젝트:** Smart Communication in ADAS-Equipped Electric Vehicle with CAN-FD, CAN and RF
+>
+> **기능:**  Lane Keeping Assist, Forward Collision Warning, Blind-Spot Collision-Avoidance Assist, Auto headlight, Radio control
+>
+> **구상도:**
 
 <br />
 
