@@ -48,7 +48,7 @@
 
 ## **👨🏻‍💻 기능 구현**
 
-### **1. CAN,CAN-FD_Communication**
+### **1. CAN,CAN-FD Communication**
 
 - 라이트 및 다크모드 기능 구현
 - 사용자의 시스템 모드에 맞게 theme이 설정되도록 구현
