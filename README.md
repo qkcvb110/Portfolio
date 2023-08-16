@@ -81,9 +81,10 @@ STM32 - Raspberry Pi CAN Communication Test
 
 - STM32F411에서 ADC값 측정후 STM32(1)로 RF통신을 사용하여 값을 보냄
 
-STM32H7(Rx)-STM32F411(Tx) RF통신으로 ADC값을 이용해 모터제어
+- STM32H7(Rx)-STM32F411(Tx) RF통신으로 ADC값을 이용해 앞뒤모터제어
 
-![핸들_인식_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/3fe3269c-7c57-46ab-84fd-b31dad78cdc8)
+![스위치로_앞뒤모터_제어_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/1b341524-85f7-45f4-9da8-7df0815f8bf1) ![핸들_인식_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/bd30c80f-2607-49d8-8700-69eadadf768f)
+
 
 ### **3. Lane Keeping Assist**
 
