@@ -74,6 +74,7 @@ STM32 - Raspberry Pi CAN Communication Test
 - 조종기로는 핸들과 엑셀레이터를 직접제작하여 가변저항의 ADC값을 RF로 통신
   
 <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/ffb32203-ef52-4cc4-9996-8100f3610fce.png" width="300" height="400"/>
+<img src="https://github.com/qkcvb110/Portfolio/assets/121782690/002638d1-3e93-49a4-9d98-891ba6908acc" width="700" height="400"/>
 
 ![가변저항_측정_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/dd0bd833-3444-478a-aae6-592a2869421f)
 
