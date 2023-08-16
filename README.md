@@ -82,7 +82,8 @@
 > 
 > #### STM32H7(Rx)-STM32F411(Tx) RF통신으로 ADC값을 이용해 앞뒤모터제어
 >
-> ![스위치로_앞뒤모터_제어_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/1b341524-85f7-45f4-9da8-7df0815f8bf1) ![핸들_인식_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/bd30c80f-2607-49d8-8700-69eadadf768f)
+> ![스위치로_앞뒤모터_제어_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/03f7602a-aef4-4f92-900c-84ed59ca76dd)
+![핸들_인식_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/1dd06a80-d61e-46d1-bf7e-fd4f82a17426)
 
 
 ### **3. Lane Keeping Assist**
@@ -91,16 +92,16 @@
 > 
 > #### 기능 구현 후 첫 테스트
 >
-> ![차선인식테스트_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/02173251-7c79-47b4-a0b9-c965a22d58e7)
+> ![차선인식테스트_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/75f805c7-3357-412b-9420-d1ffd46ef9eb)
 > 
 > #### 직진 차선 인식테스트
 >
-> ![직진_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/ae935676-289d-4f5e-8778-58b508bfeb99)
+> ![직진_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/9f3dbd1c-e622-4752-bfe8-0087a32853cf)
 >
 > #### 오류값 확인 후 개선 후 최종 
 >
-> ![차선인식_우회전_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/8c2a8603-ada2-4270-b9a8-55b6dea32c47) ![차선인식_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/0be5482b-0f57-4a95-8d76-1c6f151bdefb)
-
+> ![차선인식_우회전_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/8905004f-a68d-4041-b79e-c9f64a960ff0)
+ ![차선인식_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/7245e01e-ee5e-436e-9c34-db893c3bc78b)
 
 ### **4. Foward Collision-Avoidance Assist**
 > - 전방 충돌방지 보조 기능 구현
@@ -108,11 +109,11 @@
 > 
 > #### LIDAR CAN-FD 통신
 >
-> ![라이다_rx_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/ddcdcfd2-11e5-473c-b4c8-1ee81ff83a86) ![라이다_tx_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/a375a212-96ad-4b85-bc3d-15ea810333d8)
+> ![라이다_rx_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/be592a73-d340-4922-913a-26ee13bdb912) ![라이다_tx_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/ee5b5969-6770-4355-a4d8-546fede506e4)
 >  
 > #### LIDAR 테스트 영상
 >
-> ![라이다_테스트_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/463ace7b-89a8-4374-aa94-796f30fa93fa)
+> ![라이다_테스트_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/600dd67f-8e80-4219-93ed-bef1ae5e63d0)
 >
 
 
@@ -120,7 +121,7 @@
 > - 후측방 충돌방지 보조 기능 구현
 > - 양측면과 후방에 초음파센서 하나씩 부착 후 거리 측정후 일정 거리가 되면 부저경고
 > #### 후측면 초음파 센서 부착 모습
-> <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/b64cdac3-366b-4582-a55a-091352bfe8ea" width="300" height="400"/> <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/c9509a4a-2ace-4dd4-9ae7-f46c52456ad4" width="300" height="400"/> <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/fb925516-00b1-4cfa-9853-0a9f92e77bdd" width="300" height="400"/>
+> <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/1b345b4a-867b-4a61-aace-a672f441fa3e" width="300" height="400"/> <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/40b30eea-344d-4474-af3e-52f0622c4878" width="300" height="400"/> <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/f6496ba3-8ade-4fc1-994e-c4b32bd94941" width="300" height="400"/>
 
 
 ### **6. Auto headlight**
@@ -128,4 +129,4 @@
 > - 조도센서의 값을 ADC로 변환 후 CAN-FD로 통신 후 전조등 PWM으로 제어
 >
 > #### 조도센서 LED제어 모습
-> ![KakaoTalk_20230816_174848771_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/3c372c95-1dcb-47a9-8cdb-bdfc7066fae5)
+> ![KakaoTalk_20230816_174848771_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/812b867f-b1de-473c-9242-8e86f6e7b4b5)
