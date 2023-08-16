@@ -71,6 +71,9 @@ STM32 - Raspberry Pi CAN Communication Test
 ### **2. RF Communication**
 
 - 전동자동차를 원격으로 조종하기 위한 통신으로 RF 통신을 사용
+- 조종기로는 핸들과 엑셀레이터를 직접제작하여 가변저항의 ADC값을 RF로 통신
+
+![가변저항_측정_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/02303023-a9df-4b01-8c23-a1af32cb3f46)
 
 ### **3. Lane Keeping Assist**
 
