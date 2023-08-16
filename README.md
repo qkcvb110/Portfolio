@@ -75,7 +75,7 @@ STM32 - Raspberry Pi CAN Communication Test
   
 <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/ffb32203-ef52-4cc4-9996-8100f3610fce.png" width="300" height="400"/>
 
-![가변저항_측정_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/02303023-a9df-4b01-8c23-a1af32cb3f46)
+![가변저항_측정_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/dd0bd833-3444-478a-aae6-592a2869421f)
 
 
 - STM32F411에서 ADC값 측정후 STM32(1)로 RF통신을 사용하여 값을 보냄
