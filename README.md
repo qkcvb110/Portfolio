@@ -61,7 +61,7 @@
 
 ## **👨🏻‍💻 기능 구현**
 
-### **1. CAN,CAN-FD Communication**
+### [**1. CAN,CAN-FD Communication**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_1_RX)
 > - 프로젝트에 사용된 주 통신으로 CAN(Controller Area Network)통신을 사용
 > - STM32 간은 CAN-FD, Raspberry Pi와 STM 간의 통신은 CAN을 사용하여 통신
 >
