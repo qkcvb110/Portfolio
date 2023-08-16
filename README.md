@@ -88,7 +88,7 @@
 
 ### **3. Lane Keeping Assist**
 > - ADAS의 기능 중 차선보조기능을 선택하여 구현
-> - 보드는 Raspberry Pi 4B 8GB 모델을 선택하여 실시간 데이터를 전송
+> - 보드는 Raspberry Pi 4B 8GB 모델을 선택하여 실시간 데이터를 STM32와 CAN 통신으로 전송
 > 
 > #### 기능 구현 후 첫 테스트
 >
