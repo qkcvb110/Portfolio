@@ -1,6 +1,6 @@
 # Project preparation
 - 🛠 [사용한 보드 및 센서]
-  - [STM32H7A3ZI](STM32H7A3ZI)
+  - [STM32H7A3ZI](#STM32H7A3ZI)
   - [RF Communication](#2-RF-Communication)
   - [Lane Keeping Assist](#2-Lane-Keeping-Assist)
   - [Foward Collision-Avoidance Assist](#2-Foward-Collision-Avoidance-Assist)
@@ -10,7 +10,7 @@
 
 ## **개발 보드**
 
-**STM32H7A3ZI**
+# [**STM32H7A3ZI**]
 >
 >![스크린샷 2023-08-16 201614](https://github.com/qkcvb110/Portfolio/assets/121782690/164f51c3-1997-4bc1-8756-14d03c7d57be)
 > 
