@@ -8,18 +8,59 @@
 
 <b>
 
-- [CAN,CAN-FD사용이유](#사용이유)
-- 🛠 [사용한 모듈](#사용한-모듈)
-- ✨ [연결 방법 및 Flow Chart](#연결-방법)
-- 👨🏻‍💻 [코드 설명](#코드-설명명)
+- [CAN, CAN-FD 사용한 이유](CAN-CAN-FD-사용한-이유)
+- 🛠 [기술 및 도구](#-기술-및-도구)
+- ✨ [작품 소개](#-작품-소개)
+- 👨🏻‍💻 [기능 구현](#-기능-구현)
 
-### **사용이유**
+### CAN, CAN-FD 사용한 이유
 > #### 상용화된 자동차에서 사용중인 CAN, CAN-FD를 아래와 같은 이유로 프로젝트에 사용
 > #### 멀티플렉스된 통신
 > - 다양한 시스템 간의 효율적이고 신속한 데이터 교환을 가능
 > #### 고신뢰성 및 내구성
 > - 자동차 환경은 진동, 온도 변화, 전압 변동 등의 불안정한 조건을 포함한다. CAN 통신은 이러한 환경에서도 안정적으로 작동하는 고신뢰성과 내구성을 가지고 있음
-> #### 데이명
+> #### 데이터 우선순위
+> - CAN 통신은 데이터의 우선순위를 설정하여 중요한 데이터에 대한 우선 처리 가능
+> #### 단순한 배선
+> - CAN 통신은 BUS 통신방법을 사용하여 데이터를 여러 시스템 간에 하나의 통신 선로를 통해 교환할 수 있음
+> #### 컴포넌트의 통합 및 모듈화
+> - CAN 통신을 사용하면 자동차의 다양한 시스템을 모듈화하여 컴포넌트 간의 통합을 용이
+
+<br/>
+
+### 사용한 모듈
+**CAN Transceiver**
+> ###### STM32의 CAN-DATA를 보내기 위한 모듈
+><img src="https://github.com/qkcvb110/Portfolio/assets/121782690/bed563ab-1427-45f2-bc05-df0f8eeda449" width="250" height="200"/>
+>
+>**사용 이유**
+>- ###### STM32H7A3ZI에는 CAN Controller가 내장되어있지만 CAN Transceiver가 내장되어있지않아 사용
+
+<br/>
+
+**CAN Bus Controller Module**
+> ###### Raspberry Pi 4B CAN을 사용하기 위한 모듈
+><img src="https://github.com/qkcvb110/Portfolio/assets/121782690/f13da744-fddf-4096-a8e5-9a64286e2b1d" width="250" height="200"/>
+>
+>**사용 이유**
+>
+>- ###### Raspberry Pi 4B에는 CAN이 따로 지원하지 않기 때문에 CAN Controller와 CAN Transceiver가 모두 내장되어있는 모듈을 사용
+
+<br/>
+
+**연결 방법**
+
+![image](https://github.com/qkcvb110/Portfolio/assets/121782690/130d3b31-17a0-4d8d-b27c-d326193fdab8)
+
+<br/>
+
+### Flow Chart
+<img src="https://github.com/qkcvb110/Portfolio/assets/121782690/6f48671f-eda1-44f9-8b33-16ea1954eb78" width="900" height="500"/>
+
+
+
+
+# 코드 부분
 ### CAN 초기화 및 설정
 **이 코드는 STM32 HAL (Hardware Abstraction Layer) 라이브러리를 사용하여 FDCAN1 (Flexible Data Rate Controller Area Network 1)을 초기화하는 함수이며 CAN-FD은 CAN 통신을 지원하는 하드웨어 모듈로, 고속 데이터 전송 및 에러 검출 기능을 포함**
 ```c
