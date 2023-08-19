@@ -14,8 +14,6 @@
   - [Foward Collision-Avoidance Assist](#2-Foward-Collision-Avoidance-Assist)
   - [Blind-Spot Collision-Avoidance Assist](#2-Blind-Spot-Collision-Avoidance-Assist)
   - [Auto headlight](#2-Auto-headlight)
-- 🚀 [배포](#-배포)
-- ⏰ [커밋 히스토리](#-커밋-히스토리)
 
 </b>
 
