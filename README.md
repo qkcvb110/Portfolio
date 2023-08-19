@@ -57,7 +57,8 @@
 > **목표 기능:** Lane Keeping Assist, Foward Collision-Avoidance Assist, Blind-Spot Collision-Avoidance Assist, Auto headlight, Radio control
 >
 > **구상도**
-> <img width="100%" src=https://github.com/qkcvb110/Portfolio/assets/121782690/39f393b4-c283-44d2-8740-e597be9d826e/>
+> ![KakaoTalk_20230819_182954222](https://github.com/qkcvb110/Portfolio/assets/121782690/12019a38-dc8a-4656-ba84-139fd4a13c36)
+> 
 > **완성 모습**
 > ----추가----
 >
