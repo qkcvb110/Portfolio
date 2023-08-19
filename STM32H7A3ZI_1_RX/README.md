@@ -48,7 +48,7 @@
 
 <br/>
 
-**연결 방법**
+### **연결 방법**
 
 ![image](https://github.com/qkcvb110/Portfolio/assets/121782690/130d3b31-17a0-4d8d-b27c-d326193fdab8)
 
