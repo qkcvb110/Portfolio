@@ -175,6 +175,17 @@
 
 ![라이다_rx_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/5b00c63d-5d7f-41ef-b20b-22c977ad0201)
 
-**STM32 - Raspberry Pi WireShark를 이용하여 수신을 확인**
+### Raspberry Pi CAN-Data 수신
+**이 코드는 python-can 라이브러리를 사용하여 CAN 메시지를 생성하고 송신하는 부분**
+```c
+        bus = can.Bus(interface='socketcan',
+              channel='can0', 
+              receive_own_messages=True)   //CAN 버스를 설정하고 초기화. interface는 사용할 인터페이스를 지정하며, channel은 사용할 캔 채널을 지정한. 
+	message = can.Message(arbitration_id=0x44, is_extended_id=False,data=[0x4C])  //보낼 CAN 메시지를 생성 arbitration_id는 메시지의 식별자(ID)를 나타낸다. is_extended_id는 식별자가 확장된 ID 형식인지 여부를 나타낸다. data는 메시지의 데이터를 지정
+                  bus.send(message, timeout=0.2)  //생성한 메시지를 CAN 버스를 통해 송신 timeout은 메시지 송신의 제한 시간을 나타낸다.
+
+```
+
+**STM32 - Raspberry Pi WireShark를 이용하여 송수신을 확인**
  
 ![can_test_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/dafc5989-2f69-422b-8a81-247e9ec70b2f)
