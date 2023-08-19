@@ -94,14 +94,18 @@ mimg = cv2.addWeighted(src, 1, ccan, 1, 0)
 <br/>
 
 > #### 기능 구현 후 첫 테스트
->
+> 
 > ![차선인식테스트_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/75f805c7-3357-412b-9420-d1ffd46ef9eb)
 > 
 > #### 직진 차선 인식테스트
->
+> #### 개선할점
+> - 카메라의 위치
+> - 인식은 조향장치의 약 30~50cm 앞을 하므로 이 부분을 개선
+> 
 > ![직진_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/9f3dbd1c-e622-4752-bfe8-0087a32853cf)
 >
-> #### 오류값 확인 후 개선 후 최종 
+> #### 문제점 개선 후 최종 우회전과 좌회전
+> - 카메라의 위치 조정과 조향장치의 앞을 인식하는 문제점을 개선하여 차선보조기능 마무리
 >
 > ![차선인식_우회전_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/8905004f-a68d-4041-b79e-c9f64a960ff0)
  ![차선인식_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/7245e01e-ee5e-436e-9c34-db893c3bc78b)
