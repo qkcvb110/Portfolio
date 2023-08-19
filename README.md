@@ -52,8 +52,12 @@
 >
 > **작품 선정 동기:** 팀원 전원이 자동차에 관심이 많아 제작하게 됨 ---수정---
 > 
-> **목표 기능:** Lane Keeping Assist, Foward Collision-Avoidance Assist, Blind-Spot Collision-Avoidance Assist, Auto headlight, Radio control
->
+> **목표 기능**
+> - Lane Keeping Assist
+> - Foward Collision-Avoidance Assist
+> - Blind-Spot Collision-Avoidance Assist
+> - Auto headlight, Radio control
+> - 
 > **구상도**
 > ![KakaoTalk_20230819_182954222](https://github.com/qkcvb110/Portfolio/assets/121782690/12019a38-dc8a-4656-ba84-139fd4a13c36)
 > 
