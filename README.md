@@ -59,7 +59,8 @@
 > **구상도**
 > ![KakaoTalk_20230819_182954222](https://github.com/qkcvb110/Portfolio/assets/121782690/12019a38-dc8a-4656-ba84-139fd4a13c36)
 > 
-> ![KakaoTalk_20230819_190100537](https://github.com/qkcvb110/Portfolio/assets/121782690/b1a28858-fab1-49f8-bfe5-f44c19cbf8f6)
+> <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/b1a28858-fab1-49f8-bfe5-f44c19cbf8f6" width="800" height="350"/> 
+
 
 <br />
 
