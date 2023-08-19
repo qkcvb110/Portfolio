@@ -29,7 +29,11 @@
 >
 > **제작 기간:** 2023.01 ~ 08.
 >
-> **주요 기능:** Lane Keeping Assist, Foward Collision-Avoidance Assist, Blind-Spot Collision-Avoidance Assist, Auto headlight, Radio control 
+> **주요 기능**
+> - Lane Keeping Assist
+> - Foward Collision-Avoidance Assist
+> - Blind-Spot Collision-Avoidance Assist
+> - Auto headlight, Radio control 
 >
 > **사용 기술:** CAN-FD, CAN, RF Communication
 >
