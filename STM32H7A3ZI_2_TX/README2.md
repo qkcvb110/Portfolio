@@ -49,6 +49,6 @@ adc1 = HAL_ADC_GetValue(&hadc1)/650;
 ```
 
 ## 구현 과정
-> #### 조도센서 LED제어 모습
+> #### 조도센서 LED제어 모습  --변경--
 > ![KakaoTalk_20230816_174848771_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/812b867f-b1de-473c-9242-8e86f6e7b4b5)
 >
