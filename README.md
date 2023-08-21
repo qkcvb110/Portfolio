@@ -14,6 +14,7 @@
   - Foward Collision-Avoidance Assist
   - Blind-Spot Collision-Avoidance Assist
   - Auto headlight
+  - Motor
 
 </b>
 
@@ -33,7 +34,8 @@
 > - Blind-Spot Collision-Avoidance Assist
 > - Auto Headlight
 > - Radio control 
->
+> - Motor
+> 
 > **사용 기술:** CAN-FD, CAN, RF Communication
 >
 > **문의:** qkcvb110@naver.com
@@ -59,6 +61,7 @@
 > - Blind-Spot Collision-Avoidance Assist
 > - Auto Headlight
 > - Radio control
+> - Motor
 >   
 > **구상도**
 > ![KakaoTalk_20230819_182954222](https://github.com/qkcvb110/Portfolio/assets/121782690/12019a38-dc8a-4656-ba84-139fd4a13c36)
@@ -88,3 +91,5 @@
 ### [**6. Auto Headlight**](https://github.com/qkcvb110/Portfolio/blob/master/STM32H7A3ZI_2_TX/README2.md)
 > - 밝기에 따른 차량 전조등 제어
 
+### [**7. Motor**](https://github.com/qkcvb110/Portfolio/blob/master/STM32H7A3ZI_1_RX/README2.md)
+> - CAN,CAN-FD,RF 통신으로 받은 값들을 모터로 제어어
