@@ -83,6 +83,6 @@
 ### [**5. Blind-Spot Collision-Avoidance Assist**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_2_TX/README.md)
 > - 후측방 충돌방지 보조 기능 구현
 
-### [**6. Auto headlight**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_2_TX/README.md)
+### [**6. Auto headlight**](https://github.com/qkcvb110/Portfolio/blob/master/STM32H7A3ZI_2_TX/README2.md)
 > - 밝기에 따라 차량 전조등 제어
 
