@@ -21,7 +21,7 @@
 
 > **프로젝트:** Smart Communication in ADAS-Equipped Electric Vehicle with CAN-FD, CAN and RF
 >
-> **기획 및 제작:** 강민성, 오승찬, 최원진
+> **기획 및 제작:** **강민성**, 오승찬, 최원진
 >
 > **분류:** Team Project
 >
