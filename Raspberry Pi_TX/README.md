@@ -1,4 +1,20 @@
 # 3. Lane Keeping Assist
+
+## **📗 바로가기**
+
+<b>
+
+- [Foward Collision-Avoidance Assist](#foward-collision-avoidance-assist)
+- [사용 센서](#tf-luna-lidar-sensor)
+- [FlowChart](#flow-chart)
+- [코드 설명](#코드-부분)
+- [구현 과정](#구현-과정)
+
+## **Lane Keeping Assist**
+###  주행 중 차량이 차로를 벗어나지 않도록 보조는 시스템이다. 일정 속도 이상에서 운전자가 방향지시등을 켜지 않고 차로를 이탈하려고 하면 운전자에게 경고하며, 설정에 따라 스티어링 휠을 직접 제어해 차로를 벗어나지 않도록 보조
+![IGDteMXJiS1D7rvKvedIwjY2zTXBTPd_a3jmhKNYNfFw4ZnjVbamcXz_53uwGT70ceO-w6NCOGojYrz0eP5gaA (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/9d11cc02-4075-4827-809f-d05ffaa5de66)
+
+
 > - ADAS의 기능 중 차선보조기능을 선택하여 구현
 > - 보드는 Raspberry Pi 4B 8GB 모델을 선택하여 실시간 데이터를 STM32와 CAN 통신으로 전송
 > - OpenCV를 통하여 구현
