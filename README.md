@@ -71,18 +71,18 @@
 ### [**1. CAN,CAN-FD Communication**](https://github.com/qkcvb110/Portfolio/blob/master/STM32H7A3ZI_1_RX/README.md)
 > - 프로젝트에 사용된 주 통신으로 CAN(Controller Area Network)통신을 사용
 
-### [**2. RF Communication**](https://github.com/qkcvb110/Portfolio/tree/master/STM32F411_TX)
+### [**2. RF Communication**](https://github.com/qkcvb110/Portfolio/blob/master/STM32F411_TX/README.md)
 > - 전동자동차를 원격으로 조종하기 위한 통신으로 RF 통신을 사용
 
-### [**3. Lane Keeping Assist**](https://github.com/qkcvb110/Portfolio/tree/master/Raspberry%20Pi_TX)
+### [**3. Lane Keeping Assist**](https://github.com/qkcvb110/Portfolio/tree/master/Raspberry%20Pi_TX/README.md)
 > - ADAS의 기능 중 차선보조기능을 선택하여 구현
 
-### [**4. Foward Collision-Avoidance Assist**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_3_TX)
+### [**4. Foward Collision-Avoidance Assist**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_3_TX/README.md)
 > - 전방 충돌방지 보조 기능 구현
 
-### [**5. Blind-Spot Collision-Avoidance Assist**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_2_TX)
+### [**5. Blind-Spot Collision-Avoidance Assist**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_2_TX/README.md)
 > - 후측방 충돌방지 보조 기능 구현
 
-### [**6. Auto headlight**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_2_TX)
+### [**6. Auto headlight**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_2_TX/README.md)
 > - 밝기에 따라 차량 전조등 제어
 
