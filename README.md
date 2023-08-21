@@ -8,12 +8,12 @@
 - 🛠 [기술 및 도구](#-기술-및-도구)
 - ✨ [작품 소개](#-작품-소개)
 - 👨🏻‍💻 [기능 구현](#-기능-구현)
-  - [CAN,CAN-FD Communication](#1-CAN,CAN-FD_Communication)  
-  - [RF Communication](#2-RF-Communication)
-  - [Lane Keeping Assist](#2-Lane-Keeping-Assist)
-  - [Foward Collision-Avoidance Assist](#2-Foward-Collision-Avoidance-Assist)
-  - [Blind-Spot Collision-Avoidance Assist](#2-Blind-Spot-Collision-Avoidance-Assist)
-  - [Auto headlight](#2-Auto-headlight)
+  - CAN,CAN-FD Communication
+  - RF Communication
+  - Lane Keeping Assist
+  - Foward Collision-Avoidance Assist
+  - Blind-Spot Collision-Avoidance Assist
+  - Auto headlight
 
 </b>
 
