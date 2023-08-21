@@ -55,7 +55,7 @@
 <br/>
 
 ### Flow Chart
-<img src="https://github.com/qkcvb110/Portfolio/assets/121782690/6f48671f-eda1-44f9-8b33-16ea1954eb78" width="900" height="500"/>
+![image](https://github.com/qkcvb110/Portfolio/assets/121782690/2d791928-7da1-4d33-ae4a-072677429d10)
 
 
 
