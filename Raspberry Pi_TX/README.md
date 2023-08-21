@@ -102,6 +102,7 @@ mimg = cv2.addWeighted(src, 1, ccan, 1, 0)
 > **CAN-Data 송신**
 > 
 > **결정된 방향을 CAN-Data로 정의 후 송신**
+> id=0x44 ID는 0x44로 설정 후 데이터 0x4C(L)을 송신
 ```c
  message = can.Message(arbitration_id=0x44, is_extended_id=False,data=[0x4C])
            bus.send(message, timeout=0.2)
