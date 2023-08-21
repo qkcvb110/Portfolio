@@ -215,6 +215,43 @@ uint8_t NRF24_Transmit (uint8_t *data)
 }
 ```
 
+<br/>
+
+## 수신모드 FIFO 초기화 및 수신 과정
+#### 이 함수는 NRF24L01 무선 통신 모듈을 사용하여 데이터를 수신하는 역할을 하며 수신된 데이터를 버퍼에 저장하고, 수신 상태를 초기화하여 다음 데이터 수신을 준비
+> - 무선 통신 모듈을 선택
+> - 데이터를 수신하기 위한 페이로드 수신 커맨드를 설정
+> - 설정한 페이로드 수신 커맨드를 SPI 통신을 통해 모듈에 전송
+> - 데이터를 모듈에서 수신하여 data 버퍼에 저장(32바이트의 데이터를 수신하도록 설정)
+> - 무선 통신 모듈의 선택을 해제
+> - RX FIFO를 비우기 위해 FLUSH_RX 커맨드를 설정
+> - 커맨드를 모듈에 전송
+
+```c
+void NRF24_Receive (uint8_t *data)
+{
+	uint8_t cmdtosend = 0;
+
+	// select the device
+	CS_Select();
+
+	// payload command
+	cmdtosend = R_RX_PAYLOAD;
+	HAL_SPI_Transmit(NRF24_SPI, &cmdtosend, 1, 100);
+
+	// Receive the payload
+	HAL_SPI_Receive(NRF24_SPI, data, 32, 1000);
+
+	// Unselect the device
+	CS_UnSelect();
+
+	HAL_Delay(1);
+
+	cmdtosend = FLUSH_RX;
+	nrfsendCmd(cmdtosend);
+}
+```
+
 ## **조종기 구현**
 > - 조종기로는 핸들과 엑셀레이터를 직접제작하여 가변저항의 ADC값을 RF로 통신
 > - **조종기 전체 모습**
