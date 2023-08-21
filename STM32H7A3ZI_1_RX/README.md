@@ -10,10 +10,10 @@
 
 - [CAN,CAN-FD를 사용한 이유](#사용-이유)
 - [사용한 모듈 소개](#사용한-모듈)
-- [연결 방법 및 FlowChart](#연결-방법)
+- [연결 방법 및 FlowChart](#연결-방법-및-데이터-전송-원리)
 - [코드](#코드-설명)
 
-### **사용 이유**
+## **사용 이유**
 > #### 상용화된 자동차에서 사용중인 CAN, CAN-FD를 아래와 같은 이유로 프로젝트에 사용
 > #### 멀티플렉스된 통신
 > - 다양한 시스템 간의 효율적이고 신속한 데이터 교환을 가능
@@ -28,7 +28,7 @@
 
 <br/>
 
-### 사용한 모듈
+## 사용한 모듈
 **CAN Transceiver**
 > ###### STM32의 CAN-DATA를 보내기 위한 모듈
 ><img src="https://github.com/qkcvb110/Portfolio/assets/121782690/bed563ab-1427-45f2-bc05-df0f8eeda449" width="250" height="200"/>
@@ -48,13 +48,18 @@
 
 <br/>
 
-### **연결 방법**
+## **연결 방법 및 데이터 전송 원리**
 
 ![image](https://github.com/qkcvb110/Portfolio/assets/121782690/130d3b31-17a0-4d8d-b27c-d326193fdab8)
 
+> - CAN, CAN-FD는 위와 같은 방법으로 CAN-HIGH, CAN-LOW 두 선에 각각 연결
+> - CAN Data는 CAN-HIGH, CAN-LOW의 전압차를 이용하여 전송
+> - 3.5V - 1.5V = 2V -> local 1(recessive)
+> - 2.5V - 2.5V = 0V -> local 0(dominant)
+
 <br/>
 
-### Flow Chart
+## Flow Chart
 ![image](https://github.com/qkcvb110/Portfolio/assets/121782690/2d791928-7da1-4d33-ae4a-072677429d10)
 
 
@@ -63,6 +68,17 @@
 # 코드 설명
 ### CAN 초기화 및 설정
 **이 코드는 STM32 HAL (Hardware Abstraction Layer) 라이브러리를 사용하여 FDCAN1 (Flexible Data Rate Controller Area Network 1)을 초기화하는 함수이며 CAN-FD은 CAN 통신을 지원하는 하드웨어 모듈로, 고속 데이터 전송 및 에러 검출 기능을 포함**
+> - 모든 ECU들을 통신하기 위해서는 각 ECU들의 클럭 속도를 맞추는게 중요
+> - APB1 clock = 4MHz<br>Prescaler = 1<br>4MHz / 1 = 4MHz8MHz → 1초에 4000000 bit
+> - 제일 작은 단위. 한 clock의 시간을 계산하려면 역수로 계산
+> - 1타임 퀀텀의 시간 단위 = 1 / 4MHz =0.25us<br>SYNC_SEG → 1 타임 퀀텀 사용 (고정)
+> - BIT SEGMENT 1 (BS1) → 5 타임 퀀텀 배정<br>BIT SEGMENT 2 (BS2) → 2 타임 퀀텀 배정
+> - SYNC_SEG + BS1 + BS2 = 총 8개 타임 퀀텀. 1 타임 퀀텀 당 0.25us
+> - total quantum → 0.25us * 8 = 2us (1 clock (bit) 뛰는데 들어가는 시간)
+> - 해당 값의 (2us) 속도를 계산하려면 역수로 계산
+> - 따라서 **1 bit 당 2us 소요** (500kbps → 초당 500k bit)
+> - SAMPLE POINT*= (SYNC_SEG + BS1) / 전체 타임 퀀텀 = (1 + 5) / 8 =75%
+> - BaudRate (통신속도) = **500kbps**
 ```c
     void MX_FDCAN1_Init(void)
     {
@@ -99,9 +115,9 @@
 
 ### CAN 메시지 송신 준비 및 ID 설정
 **이 코드는 STM32에서 FDCAN 메시지를 송신하기 위해 사용되는 TxHeader 구조체의 필드들을 설정하는 부분이며 각 필드는 메시지 전송을 제어하고 정의하기 위해 사용**
-  
+> - 이 프로젝트에선 세개의 송신자들이 존재하므로 각각 ID를 부여  
 ```c
-    TxHeader.Identifier = 0x11;
+    TxHeader.Identifier = 0x11;  //Lidar의 TxHeader ID = 0x11
     TxHeader.IdType = FDCAN_STANDARD_ID;
     TxHeader.TxFrameType = FDCAN_DATA_FRAME;
     TxHeader.DataLength = FDCAN_DLC_BYTES_16;
@@ -110,6 +126,21 @@
     TxHeader.FDFormat = FDCAN_FD_CAN;
     TxHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
     TxHeader.MessageMarker = 0x0;
+```
+```c
+    TxHeader.Identifier = 0x33; //초음파 및 조도의 TxHeader ID = 0x33
+    TxHeader.IdType = FDCAN_STANDARD_ID;
+    TxHeader.TxFrameType = FDCAN_DATA_FRAME;
+    TxHeader.DataLength = FDCAN_DLC_BYTES_16;
+    TxHeader.ErrorStateIndicator = FDCAN_ESI_ACTIVE;
+    TxHeader.BitRateSwitch = FDCAN_BRS_OFF;
+    TxHeader.FDFormat = FDCAN_FD_CAN;
+    TxHeader.TxEventFifoControl = FDCAN_NO_TX_EVENTS;
+    TxHeader.MessageMarker = 0x0;
+```
+```c
+    //라즈베리의 TxHeader ID=0x44 
+    message = can.Message(arbitration_id=0x44, is_extended_id=False,data=[0x4C])
 ```
 
 ### CAN 메시지 송신 준비 및 요청
