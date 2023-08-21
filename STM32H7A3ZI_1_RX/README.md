@@ -67,8 +67,10 @@
 
 
 # 코드 설명
-### CAN 초기화 및 설정
+## STM32 CAN-FD 초기화 및 설정
 **이 코드는 STM32 HAL (Hardware Abstraction Layer) 라이브러리를 사용하여 FDCAN1 (Flexible Data Rate Controller Area Network 1)을 초기화하는 함수이며 CAN-FD은 CAN 통신을 지원하는 하드웨어 모듈로, 고속 데이터 전송 및 에러 검출 기능을 포함**
+![image](https://github.com/qkcvb110/Portfolio/assets/121782690/e2adb242-75cc-40bc-84bc-84adb00239b3)
+
 > - 모든 ECU들을 통신하기 위해서는 각 ECU들의 클럭 속도를 맞추는게 중요
 > - APB1 clock = 4MHz<br>Prescaler = 1<br>4MHz / 1 = 4MHz8MHz → 1초에 4000000 bit
 > - 제일 작은 단위. 한 clock의 시간을 계산하려면 역수로 계산
@@ -113,8 +115,9 @@
         hfdcan1.Init.TxElmtSize = FDCAN_DATA_BYTES_16;
      }
 ```
+## Raspberry Pi CAN 초기화 및 설정
 
-### CAN 메시지 송신 준비 및 ID 설정
+## CAN 메시지 송신 준비 및 ID 설정
 **이 코드는 STM32에서 FDCAN 메시지를 송신하기 위해 사용되는 TxHeader 구조체의 필드들을 설정하는 부분이며 각 필드는 메시지 전송을 제어하고 정의하기 위해 사용**
 > - 이 프로젝트에선 세개의 송신자들이 존재하므로 각각 ID를 부여  
 ```c
@@ -144,8 +147,8 @@
     message = can.Message(arbitration_id=0x44, is_extended_id=False,data=[0x4C])
 ```
 
-### CAN 메시지 송신 준비 및 요청
-**이 코드는 송신 메시지를 송신 FIFO에 추가하는 코드이다**
+## CAN 메시지 송신 준비 및 요청
+**는 송신 메시지를 송신 FIFO에 추가하는 코드**
   
 ```c
     sprintf ((char *)TxData_Node1_To_Node3 ,"%d%d%d",Dist1,Dist2,Dist3);
@@ -154,9 +157,21 @@
         Error_Handler();
     }
 ```
+## Raspberry Pi CAN-Data 송신 준비 및 요청
+**python-can 라이브러리를 사용하여 CAN 메시지를 생성하고 송신하는 부분**
+> - CAN 버스를 설정하고 초기화. interface는 사용할 인터페이스를 지정하며, channel은 사용할 캔 채널을 지정함
+> - 보낼 CAN 메시지를 생성 arbitration_id는 메시지의 식별자(ID)를 나타냄
+> - is_extended_id는 식별자가 확장된 ID 형식인지 여부를 나타낸다. data는 메시지의 데이터를 지정
+> - 생성한 메시지를 CAN 버스를 통해 송신 timeout은 메시지 송신의 제한 시간을 나타낸다.
+```c
+        bus = can.Bus(interface='socketcan',
+              channel='can0', receive_own_messages=True)  
+	message = can.Message(arbitration_id=0x44, is_extended_id=False,data=[0x4C])  
+                  bus.send(message, timeout=0.2) 
 
-### CAN 수신 FIFO,BUFFER 설정
-**이 코드는 STM32 HAL (Hardware Abstraction Layer) 라이브러리를 사용하여 FDCAN의 수신 콜백 함수를 정의하는 부분이며 각 콜백 함수는 FDCAN 수신 동작에서 특정 이벤트가 발생했을 때 호출되며, 수신된 데이터를 읽고 처리하는 역할을 한다. 이 프로젝트에선 두개의 FIFO와 한개의 BUFFER를 사용하였다**
+```
+## CAN 수신 FIFO,BUFFER 설정
+**STM32 HAL (Hardware Abstraction Layer) 라이브러리를 사용하여 FDCAN의 수신 콜백 함수를 정의하는 부분이며 각 콜백 함수는 FDCAN 수신 동작에서 특정 이벤트가 발생했을 때 호출되며, 수신된 데이터를 읽고 처리하는 역할을 한다. 이 프로젝트에선 두개의 FIFO와 한개의 BUFFER를 사용하였다**
 ```c
     void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
     {
@@ -200,8 +215,8 @@
 
 ```
 
-### CAN 메시지 수신 대기 및 ID 필터링
-**이 코드는 수신받고자하는 ECU의 ID를 필터링하는 코드이다**
+## CAN 메시지 수신 대기 및 ID 필터링
+**수신받고자하는 ECU의 ID를 필터링하는 코드**
 ```c
     sFilterConfig.IdType = FDCAN_STANDARD_ID; 
     sFilterConfig.FilterIndex = 0;  
@@ -216,16 +231,7 @@
 
 ![라이다_rx_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/5b00c63d-5d7f-41ef-b20b-22c977ad0201)
 
-### Raspberry Pi CAN-Data 수신
-**이 코드는 python-can 라이브러리를 사용하여 CAN 메시지를 생성하고 송신하는 부분**
-```c
-        bus = can.Bus(interface='socketcan',
-              channel='can0', 
-              receive_own_messages=True)   //CAN 버스를 설정하고 초기화. interface는 사용할 인터페이스를 지정하며, channel은 사용할 캔 채널을 지정한. 
-	message = can.Message(arbitration_id=0x44, is_extended_id=False,data=[0x4C])  //보낼 CAN 메시지를 생성 arbitration_id는 메시지의 식별자(ID)를 나타낸다. is_extended_id는 식별자가 확장된 ID 형식인지 여부를 나타낸다. data는 메시지의 데이터를 지정
-                  bus.send(message, timeout=0.2)  //생성한 메시지를 CAN 버스를 통해 송신 timeout은 메시지 송신의 제한 시간을 나타낸다.
 
-```
 
 
 **STM32 - Raspberry Pi WireShark를 이용하여 송수신을 확인**
