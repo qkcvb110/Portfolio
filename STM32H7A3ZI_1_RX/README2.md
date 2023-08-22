@@ -222,3 +222,44 @@ void ridar (void)
 	}
 }
 ```
+
+## 부저를 이용하여 모든 초음파의 거리가 15cm 이하일때 경고음 작동
+> - Lidar와 마찬가지로 측정한 거리가 100의 자리, 10의 자리, 1의 자리로 나뉘어져있어 ASCII 코드를 10진수로 변환후 합쳐 각각 Distance1,2,3값으로 적용
+```c
+void buzzer (void)
+{
+	for(int i=0;i<11;i++)
+	{
+		a[i]=RxData_From_Node3[i]-'0';
+	}
+	int Distance1 = 100* a[1]  +10*a[2] +a[3];
+	int Distance2 = 100* a[4]  +10*a[5] +a[6];
+	int Distance3 = 100* a[8]  +10*a[9] +a[10];
+	if (Distance1 <= 15 || Distance2 <= 15 || Distance3 <= 15)
+	{
+		TIM2->ARR = C;
+		TIM2->CCR1 = TIM2->ARR / 2;
+		HAL_Delay(50);
+		TIM2->CCR1 = 0;
+		HAL_Delay(50);
+	 }
+}
+```
+
+## 조도센서를 통해 받은 ADC값을 PWM으로 적용후 전조등LED 제어
+> - Lidar,초음파와 마찬가지로 수신받은 ADC 값이 100의 자리, 10의 자리, 1의 자리로 나뉘어져있어 ASCII 코드를 10진수로 변환후 합쳐 값으로 적용
+```c
+void light_sensor (void)
+{
+	for(int l=12;l<=14;l++)
+	{
+		a[l]=RxData_From_Node3[l]-'0';
+	}
+	int jodo = 100* a[12]  +10*a[13] +a[14];
+	htim3.Instance->CCR1=jodo;
+	if (jodo<45)
+	{
+		htim3.Instance->CCR1=0;
+	}
+}
+```
