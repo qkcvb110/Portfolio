@@ -135,3 +135,72 @@ void nrf_motor (void)
   }
 }
 ```
+
+<br/>
+
+## 라즈베리파이의 차선인식을 통해 진행방향을 이용하여 모터 제어 함수
+> - ```RxData[3]==1```을 차선보조주행 모드
+> - 아래의 코드도 위와 같은 알고리즘으로 코드를 구현
+> - ```RxData_From_Node4[0]=='L'```일때 동안 앞바퀴를 왼쪽으로 제어
+> - ```RxData_From_Node4[0]=='R'```일때 동안 앞바퀴를 오른른쪽으로 제어
+> - ```if(RxData_From_Node4[0]=='G')```를 이용하여 차선이 Left 또는 right 로 핸들이 한쪽으로 틀었다가 Go 로 다시 왔을때 반대방향으로 모터를 제어하여 핸들을 중앙으로 위치시킴
+> - 마찬가지로  ```light_sensor();```,```buzzer();```는 위와 동일
+> - CCR값이 다른이유도 위와 동일
+```c
+void rpi_motor (void)
+{
+	if(RxData[3]==1)
+	{
+		while (RxData_From_Node4[0]=='L')
+		{
+			light_sensor();
+			buzzer();
+			if (isDataAvailable(2) == 1)
+			{
+				NRF24_Receive(RxData);
+			}
+			htim1.Instance->CCR3 = 80;
+			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, 0);
+			HAL_Delay(100);
+			go_back();
+			if(RxData[3]==0)
+			{
+				break;
+			}
+			if(RxData_From_Node4[0]=='G')
+			{
+				htim1.Instance->CCR3 = 100;
+				HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, 1);
+				HAL_Delay(200);
+				htim1.Instance->CCR3 = 0;
+				break;
+			}
+		}
+		while (RxData_From_Node4[0]=='R')
+		{
+			light_sensor();
+			buzzer();
+			if (isDataAvailable(2) == 1)
+			{
+				NRF24_Receive(RxData);
+			}
+			htim1.Instance->CCR3 = 80;
+			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, 1);
+			HAL_Delay(100);
+			go_back();
+			if(RxData[3]==0)
+			{
+				break;
+			}
+			if(RxData_From_Node4[0]=='G')
+			{
+				htim1.Instance->CCR3 = 90;
+				HAL_GPIO_WritePin(GPIOG, GPIO_PIN_14, 0);
+				HAL_Delay(200);
+				htim1.Instance->CCR3 = 0;
+				break;
+			}
+		}
+	}
+}
+```
