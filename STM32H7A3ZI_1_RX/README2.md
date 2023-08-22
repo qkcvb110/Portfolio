@@ -204,3 +204,21 @@ void rpi_motor (void)
 	}
 }
 ```
+## Lidar 센서로 거리를 측정 후 일정거리 이하 일때 모터 정지
+> - Lidar로 측정한 거리가 100의 자리, 10의 자리, 1의 자리로 나뉘어져있어 ASCII 코드를 10진수로 변환후 합쳐 Distance4값으로 적용
+> - 측정거리가 20cm 이하일 경우 모터가 정지
+```c
+void ridar (void)
+{
+	for(int j=0;j<3;j++)
+	{
+		b[j]=RxData_From_Node1[j]-'0';
+	}
+	int Distance4 = 100* b[0]  +10*b[1] +b[2];//rider
+	if(Distance4<=20)
+	{
+		htim1.Instance->CCR1=0;
+		htim1.Instance->CCR2=0;
+	}
+}
+```
