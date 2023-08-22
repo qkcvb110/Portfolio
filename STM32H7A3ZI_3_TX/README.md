@@ -58,6 +58,9 @@ bool TF_Luna_init(TF_Luna_Lidar *tf_luna,I2C_HandleTypeDef *i2c,uint8_t TF_Luna_
 }
 
 ```
+
+<br/>
+
 ## 데이터 추출
 #### 이 함수는 TF-Luna 라이더 센서에서 데이터를 가져와서 거리, 플럭스, 온도 값을 계산하고 평가하는 역할
 > - 에러 상태를 초기화하고 센서 상태를 준비 상태로 설정
@@ -122,6 +125,28 @@ bool getData(TF_Luna_Lidar *tf_luna, int16_t *dist, int16_t *flux, int16_t *temp
 
 }
 ```
+
+<br/>
+
+## CAN-Data 에 적용
+>- tfDist는 라이다 센서가 측정한 거리
+>- tfDist의 값을 100의 자리, 10의 자리, 1의 자리를 따로 구하여 sprintf를 이용하여 새로운 배열에 적용
+>- 적용된 배열 TxData_Node1_To_Node3 을 CAN-FD 를 이용하여 송신
+```c
+Dist1= (tfDist-15) / 100;
+Dist2= ((tfDist-15) %100) /10;
+Dist3= (tfDist-15) % 10;
+
+sprintf ((char *)TxData_Node1_To_Node3 ,"%d%d%d",Dist1,Dist2,Dist3);
+
+if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData_Node1_To_Node3)!= HAL_OK)
+{
+  //Error_Handler();
+}
+```
+
+<br/>
+
 ## **구현 과정**
 
 > #### LIDAR CAN-FD 통신
