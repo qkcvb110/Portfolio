@@ -14,7 +14,7 @@
 - [코드](#코드-설명)
 
 ## **사용 이유**
-> #### 상용화된 자동차에서 사용중인 CAN, CAN-FD를 아래와 같은 이유로 프로젝트에 사용
+> #### 상용화된 자동차에서 사용중인 CAN, CAN-FD를 이번 프로젝트를 통해 사용을 해보고 싶었고 BUS형식으로 배선의 단순화 밑 차의 무게 감소로 인한 에너지 절약을 위해 사용
 > #### 멀티플렉스된 통신
 > - 다양한 시스템 간의 효율적이고 신속한 데이터 교환을 가능
 > #### 고신뢰성 및 내구성
@@ -115,11 +115,34 @@
         hfdcan1.Init.TxElmtSize = FDCAN_DATA_BYTES_16;
      }
 ```
+<br/>
+
 ## Raspberry Pi CAN 초기화 및 설정
+> - 라즈베리파이에 CAN Controller Module을 사용하기 위해선 config.txt 를 수정해야 함
+> - 수정 후 재부팅해주어야 적용완료가 됨
+```c
+dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=12
+dtoverlay=spi-bcm2835-overlay
+```
+> - 재부팅 후 CAN 유틸리티 다운로드
+```c
+sudo apt-get install can-utils
+```
+> - CAN 활성화
+```c
+sudo ip link set can0 up type can bitrate 4000000
+```
+> - CAN이 정상적으로 작동이 확인(장치 확인이 된다면 정상)
+```c
+sudo ifconfig can0
+```
 
 ## CAN 메시지 송신 준비 및 ID 설정
 **이 코드는 STM32에서 FDCAN 메시지를 송신하기 위해 사용되는 TxHeader 구조체의 필드들을 설정하는 부분이며 각 필드는 메시지 전송을 제어하고 정의하기 위해 사용**
-> - 이 프로젝트에선 세개의 송신자들이 존재하므로 각각 ID를 부여  
+> - 이 프로젝트에선 세개의 송신자들이 존재하므로 각각 ID를 부여
+> - STM32H7A3ZI_2_TX 는 ID = 0x11 을 부여
+> - STM32H7A3ZI_2_TX 는 ID = 0x33 을 부여
+> - Raspberry Pi 는 ID = 0x44 을 부여
 ```c
     TxHeader.Identifier = 0x11;  //Lidar의 TxHeader ID = 0x11
     TxHeader.IdType = FDCAN_STANDARD_ID;
@@ -148,7 +171,8 @@
 ```
 
 ## CAN 메시지 송신 준비 및 요청
-**는 송신 메시지를 송신 FIFO에 추가하는 코드**
+**송신 메시지를 송신 FIFO에 추가하는 코드**
+> - 거리값들을 변수(TxData_Node1_To_Node3)에 적용하여 송신
   
 ```c
     sprintf ((char *)TxData_Node1_To_Node3 ,"%d%d%d",Dist1,Dist2,Dist3);
@@ -159,7 +183,7 @@
 ```
 ## Raspberry Pi CAN-Data 송신 준비 및 요청
 **python-can 라이브러리를 사용하여 CAN 메시지를 생성하고 송신하는 부분**
-> - CAN 버스를 설정하고 초기화. interface는 사용할 인터페이스를 지정하며, channel은 사용할 캔 채널을 지정함
+> - CAN 버스를 설정하고 초기화. interface는 사용할 인터페이스를 지정하며, channel은 사용할 CAN 채널을 지정
 > - 보낼 CAN 메시지를 생성 arbitration_id는 메시지의 식별자(ID)를 나타냄
 > - is_extended_id는 식별자가 확장된 ID 형식인지 여부를 나타낸다. data는 메시지의 데이터를 지정
 > - 생성한 메시지를 CAN 버스를 통해 송신 timeout은 메시지 송신의 제한 시간을 나타낸다.
@@ -217,14 +241,50 @@
 
 ## CAN 메시지 수신 대기 및 ID 필터링
 **수신받고자하는 ECU의 ID를 필터링하는 코드**
+> - 수신받고자하는 ECU가 세개이므로 STM32 두 보드는 각각 FIFO0, FIFO1 라즈베리파이는 Buffer0를 사용하여 각 ID의 맞게 필터링
 ```c
-    sFilterConfig.IdType = FDCAN_STANDARD_ID; 
-    sFilterConfig.FilterIndex = 0;  
-    sFilterConfig.FilterType = FDCAN_FILTER_MASK; 
-    sFilterConfig.FilterConfig = FDCAN_FILTER_TO_RXFIFO1; 
-    sFilterConfig.FilterID1 = 0x44; 
-    sFilterConfig.FilterID2 = 0x7ff; 
-    sFilterConfig.RxBufferIndex = 0; 
+  hfdcan1.Init.StdFiltersNbr = 3;
+  hfdcan1.Init.RxFifo0ElmtsNbr = 1;
+  hfdcan1.Init.RxFifo0ElmtSize = FDCAN_DATA_BYTES_16;
+  hfdcan1.Init.RxFifo1ElmtsNbr = 1;
+  hfdcan1.Init.RxFifo1ElmtSize = FDCAN_DATA_BYTES_16;
+  hfdcan1.Init.RxBuffersNbr = 1;
+  hfdcan1.Init.RxBufferSize = FDCAN_DATA_BYTES_16;
+  
+  sFilterConfig.IdType = FDCAN_STANDARD_ID;
+  sFilterConfig.FilterIndex = 1;
+  sFilterConfig.RxBufferIndex = 1;
+  sFilterConfig.FilterType = FDCAN_FILTER_DUAL; // Ignore because FDCAN_FILTER_TO_RXBUFFE
+  sFilterConfig.FilterConfig = FDCAN_FILTER_TO_RXFIFO0;
+  sFilterConfig.FilterID1 = 0x33; // ID Node2
+  sFilterConfig.FilterID2 = 0x7ff; // Ignore because FDCAN_FILTER_TO_RXBUFFER
+      if(HAL_FDCAN_ConfigFilter(&hfdcan1, &sFilterConfig) != HAL_OK)
+            {
+              Error_Handler();
+            }
+        
+  sFilterConfig1.IdType = FDCAN_STANDARD_ID;
+  sFilterConfig1.FilterIndex = 2;
+  sFilterConfig1.RxBufferIndex = 2;
+  sFilterConfig1.FilterType = FDCAN_FILTER_DUAL; // Ignore because FDCAN_FILTER_TO_RXBUFFE
+  sFilterConfig1.FilterConfig = FDCAN_FILTER_TO_RXFIFO1;
+  sFilterConfig1.FilterID1 = 0x11; // ID Node2
+  sFilterConfig1.FilterID2 = 0x7ff; // Ignore because FDCAN_FILTER_TO_RXBUFFER
+     if(HAL_FDCAN_ConfigFilter(&hfdcan1, &sFilterConfig1) != HAL_OK)
+       	 {
+           Error_Handler();
+       	 }
+  sFilterConfig2.IdType = FDCAN_STANDARD_ID;
+  sFilterConfig2.FilterIndex = 0;
+  sFilterConfig2.RxBufferIndex = 0;
+  sFilterConfig2.FilterType = FDCAN_FILTER_DUAL; // Ignore because FDCAN_FILTER_TO_RXBUFFE
+  sFilterConfig2.FilterConfig = FDCAN_FILTER_TO_RXBUFFER;
+  sFilterConfig2.FilterID1 = 0x44; // ID Node2
+  sFilterConfig2.FilterID2 = 0x7ff; // Ignore because FDCAN_FILTER_TO_RXBUFFER
+          if(HAL_FDCAN_ConfigFilter(&hfdcan1, &sFilterConfig2) != HAL_OK)
+               {
+                  Error_Handler();
+               }
 ```
 ### CAN 메시지 수신 확인 후 데이터 사용
 **STM32CubeIDE의 Live Expression을 이용하여 수신을 확인**
