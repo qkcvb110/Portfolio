@@ -95,3 +95,10 @@
 > - CAN,CAN-FD,RF 통신으로 받은 값들을 모터로 제어
 
 ### [**8. 영상**]
+![뒷바퀴 엑셀](https://github.com/qkcvb110/Portfolio/assets/121782690/c9771932-f7c3-4f74-92a0-41dc8a3f20c6)
+
+![라이다 센서](https://github.com/qkcvb110/Portfolio/assets/121782690/8e93a8c7-8ef5-458a-87c5-c8af9d7982b0)
+
+![라즈베리 차선인식](https://github.com/qkcvb110/Portfolio/assets/121782690/5cc05418-0e22-4437-b580-0eca8d65ab10)
+
+![부저 (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/8dcb642f-5dad-4d8f-a2a7-7644101f6e36)
