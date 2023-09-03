@@ -265,13 +265,12 @@ void NRF24_Receive (uint8_t *data)
 >
 > #### STM32F411에서 ADC값 측정후 STM32(1)로 RF통신을 사용하여 값을 보냄
 >
-> ![가변저항_측정_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/217bcf46-4593-4650-97a5-0ed26d1d758d)
+> ![nrf-rx](https://github.com/qkcvb110/Portfolio/assets/121782690/b57b1bed-b1c2-4181-b650-40d5d437de54)
 > 
 > #### STM32H7(Rx)-STM32F411(Tx) RF통신으로 ADC값을 이용해 앞뒤모터제어
 >
-> ![스위치로_앞뒤모터_제어_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/03f7602a-aef4-4f92-900c-84ed59ca76dd)
-![핸들_인식_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/1dd06a80-d61e-46d1-bf7e-fd4f82a17426)
-
+> ![뒷바퀴 엑셀](https://github.com/qkcvb110/Portfolio/assets/121782690/c9771932-f7c3-4f74-92a0-41dc8a3f20c6)
+![](https://github.com/crasdok/capstone/assets/118472691/4d100a40-bb1d-4ec3-a9a1-659828b5c2a6)
 <br/>
 
 [본문으로 돌아가기](https://github.com/qkcvb110/Portfolio)
