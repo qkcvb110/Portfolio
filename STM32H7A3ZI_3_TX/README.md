@@ -149,14 +149,19 @@ if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &TxHeader, TxData_Node1_To_Node3)!= 
 
 ## **구현 과정**
 
-> #### LIDAR CAN-FD 통신
->
-> ![라이다_rx_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/be592a73-d340-4922-913a-26ee13bdb912) ![라이다_tx_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/ee5b5969-6770-4355-a4d8-546fede506e4)
+> ### LIDAR CAN-FD 통신
+> - 아래의 영상은 각각 라이다 센서가 측정한 값을 CAN-FD 통신으로 통신하는 Live Expression이다.
+> ![라이다-tx](https://github.com/qkcvb110/Portfolio/assets/121782690/f501bac0-5c4b-4490-8434-2926dfc79add) ![라이다-Rx](https://github.com/qkcvb110/Portfolio/assets/121782690/e72930cc-fbd9-4323-b7e8-d469ca2c3939)
+
 >  
-> #### LIDAR 테스트 영상
+> ### LIDAR 테스트 영상
 >
 > ![라이다_테스트_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/600dd67f-8e80-4219-93ed-bef1ae5e63d0)
-
+>
+> ### 최종 구현 영상
+>
+> ![라이다 센서](https://github.com/qkcvb110/Portfolio/assets/121782690/8e93a8c7-8ef5-458a-87c5-c8af9d7982b0)
+> 
 <br/>
 
 [본문으로 돌아가기](https://github.com/qkcvb110/Portfolio)
