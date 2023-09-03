@@ -69,7 +69,8 @@ void go_back(void)
   }
 }
 ```
-
+### 결과 영상
+>![뒷바퀴 엑셀](https://github.com/qkcvb110/Portfolio/assets/121782690/c9771932-f7c3-4f74-92a0-41dc8a3f20c6)
 <br/>
 
 ## 핸들의 가변저항을 이용한 모터 제어와 스위치를 이용한 모드 변경 함수
@@ -135,6 +136,9 @@ void nrf_motor (void)
   }
 }
 ```
+
+### 결과 영상
+![](https://github.com/crasdok/capstone/assets/118472691/4d100a40-bb1d-4ec3-a9a1-659828b5c2a6)
 
 <br/>
 
