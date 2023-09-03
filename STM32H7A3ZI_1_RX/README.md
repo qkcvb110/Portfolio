@@ -298,5 +298,10 @@ sudo ifconfig can0
  
 ![can_test_AdobeExpress](https://github.com/qkcvb110/Portfolio/assets/121782690/dafc5989-2f69-422b-8a81-247e9ec70b2f)
 
+<br/>
+
+### CAN 메시지 수신 확인 후 데이터 사용
+**STM32와 Raspberry Pi의 CAN-FD와 CAN 데이터를 모두 한번에 통신하는 Live Expression 영상
+![1_3통신 rx](https://github.com/qkcvb110/Portfolio/assets/121782690/cc6d0f63-5771-4b5d-a708-085bb0b5608b)
 
 [본문으로 돌아가기](https://github.com/qkcvb110/Portfolio)
