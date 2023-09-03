@@ -253,7 +253,7 @@ void NRF24_Receive (uint8_t *data)
 }
 ```
 
-## **조종기 구현** --전체 사진, 동영상 변경--
+## **조종기 구현**
 ### 조종기로는 핸들과 엑셀레이터를 직접제작하여 가변저항의 ADC값을 RF로 통신
 > - **조종기 전체 모습**
 > <img src="https://github.com/qkcvb110/Portfolio/assets/121782690/ffb32203-ef52-4cc4-9996-8100f3610fce.png" width="300" height="400"/>
