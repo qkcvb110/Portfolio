@@ -121,6 +121,7 @@ mimg = cv2.addWeighted(src, 1, ccan, 1, 0)
 > #### 기능 구현 후 첫 테스트
 > 
 > ![차선인식테스트_AdobeExpress (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/75f805c7-3357-412b-9420-d1ffd46ef9eb)
+> ![라즈베리 차선인식](https://github.com/qkcvb110/Portfolio/assets/121782690/c3da885e-9eda-4c7c-9015-912b6ff8a5f4)
 
 <br/>
 
