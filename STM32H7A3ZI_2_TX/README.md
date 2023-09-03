@@ -196,3 +196,7 @@ void HCSR04_Read1 (void)
 <br/>
 
 
+## **구현 영상**
+#### **후측면 초음파 센서를 이용하여 부저(LED)경고**
+> ![부저 (1)](https://github.com/qkcvb110/Portfolio/assets/121782690/95b63d8f-ebf4-4e7e-8e17-37cd82e69248)
+
