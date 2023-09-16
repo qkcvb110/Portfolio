@@ -103,6 +103,10 @@
 
 ### [**6. Auto Headlight**](https://github.com/qkcvb110/Portfolio/blob/master/STM32H7A3ZI_2_TX/README2.md)
 > - 밝기에 따른 차량 전조등 제어
+>
+> <br/>
+>
+> ![조도_AdobeExpress_AdobeExpress](https://github.com/crasdok/capstone/assets/118472691/c5a6ff02-2a8e-413e-a355-f17a2049f019)
 
 ### [**7. Motor**](https://github.com/qkcvb110/Portfolio/blob/master/STM32H7A3ZI_1_RX/README2.md)
 > - CAN,CAN-FD,RF 통신으로 받은 값들을 모터로 제어
