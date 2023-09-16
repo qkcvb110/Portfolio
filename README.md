@@ -89,6 +89,10 @@
 
 ### [**4. Foward Collision-Avoidance Assist**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_3_TX/README.md)
 > - 전방 충돌방지 보조 기능 구현
+>
+> <br/>
+>
+> ![라이다 센서](https://github.com/qkcvb110/Portfolio/assets/121782690/8e93a8c7-8ef5-458a-87c5-c8af9d7982b0)
 
 ### [**5. Blind-Spot Collision-Avoidance Assist**](https://github.com/qkcvb110/Portfolio/tree/master/STM32H7A3ZI_2_TX/README.md)
 > - 후측방 충돌방지 보조 기능 구현
