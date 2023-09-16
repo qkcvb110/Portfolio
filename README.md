@@ -78,7 +78,11 @@
 
 ### [**2. RF Communication**](https://github.com/qkcvb110/Portfolio/blob/master/STM32F411_TX/README.md)
 > - 전동자동차를 원격으로 조종하기 위한 통신으로 RF 통신을 사용
-
+>
+> <br/>
+>
+> ![뒷바퀴 엑셀](https://github.com/qkcvb110/Portfolio/assets/121782690/c9771932-f7c3-4f74-92a0-41dc8a3f20c6)
+![](https://github.com/crasdok/capstone/assets/118472691/4d100a40-bb1d-4ec3-a9a1-659828b5c2a6)
 ### [**3. Lane Keeping Assist**](https://github.com/qkcvb110/Portfolio/tree/master/Raspberry%20Pi_TX/README.md)
 > - ADAS의 기능 중 차선보조기능을 선택하여 구현
 > 
