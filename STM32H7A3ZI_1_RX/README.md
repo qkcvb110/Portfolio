@@ -52,7 +52,7 @@
 
 ![image](https://github.com/qkcvb110/Portfolio/assets/121782690/130d3b31-17a0-4d8d-b27c-d326193fdab8)
 
-> - CAN통신은 다른 대표적 통신 Uart,I2C,SPI 와 다른 Mash 통신 방법을 사용
+> - CAN통신은 다른 대표적 통신 Uart,I2C,SPI 와 다른 BUS 통신 방법을 사용
 > - CAN, CAN-FD는 위와 같은 방법으로 CAN-HIGH, CAN-LOW 두 선에 각각 연결
 > - CAN Data는 CAN-HIGH, CAN-LOW의 전압차를 이용하여 전송
 > - 3.5V - 1.5V = 2V -> local 1(recessive)
